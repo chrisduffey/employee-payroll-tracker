@@ -30,15 +30,20 @@ console.log(randomIndex);
 console.log(randomIndex)
 console.log(employees[randomIndex])
 
-console.log(employee(salary))
-const salaries = ()
-const avgSalary =
+// console.log(employee(salary))
+// const salaries = ()
+// const avgSalary =
 
 // Collect employee data
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
 };
-
+let sum = 0
+for(let i = 0, i < employees.length; i++){
+console.log (employees[i].salary)
+sum = sum +employees[i].salary
+}
+console.log(sum /employees.length)
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
