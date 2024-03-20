@@ -1,7 +1,21 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector("#add-employees-btn");
 
-const employees = [];
+
+  
+
+
+
+
+
+// console.log(employee(salary))
+// const salaries = ()
+// const avgSalary =
+
+// Collect employee data
+const collectEmployees = function () {
+  // TODO: Get user input to create and return an array of employee objects
+  const employeesArray = [];
 let go = true;
 
 while (go) { 
@@ -14,7 +28,7 @@ const employee = {
   lastName,
   salary: parseInt(salary),
 };
-employees.push(employee);
+employeesArray.push(employee);
 
   const on = confirm("Would you like to add another employee?"); 
   if (!on) {
@@ -22,36 +36,30 @@ employees.push(employee);
   
   }
 }
-console.log(employees)
-
-const randomIndex = Math.floor(Math.random() * employees.length);
-console.log(randomIndex);
-
-console.log(randomIndex)
-console.log(employees[randomIndex])
-
-// console.log(employee(salary))
-// const salaries = ()
-// const avgSalary =
-
-// Collect employee data
-const collectEmployees = function () {
-  // TODO: Get user input to create and return an array of employee objects
+console.log(employeesArray);
+return employeesArray;
 };
-let sum = 0
-for(let i = 0, i < employees.length; i++){
-console.log (employees[i].salary)
-sum = sum +employees[i].salary
-}
-console.log(sum /employees.length)
+
+
+
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
+  let sum = 0
+  for(let i = 0; i < employeesArray.length; i++){
+  console.log (employeesArray[i].salary)
+  sum = sum +employeesArray[i].salary
+  }
+  console.log(sum /employeesArray.length)
 };
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
+  const randomIndex = Math.floor(Math.random() * employeesArray.length);
+  console.log(randomIndex);
+  const employee = employeesArray[randomIndex]
+  console.log(`${employee.firstName} ${employee.lastName}`)
 };
 
 /*
@@ -119,3 +127,18 @@ const trackEmployeeData = function () {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener("click", trackEmployeeData);
+
+
+
+
+
+
+// GIVEN an employee payroll tracker
+// WHEN I click the "Add employee" button
+// THEN I am presented with a series of prompts asking for first name, last name, and salary
+// WHEN I finish adding an employee
+// THEN I am prompted to continue or cancel
+// WHEN I choose to continue
+// THEN I am prompted to add a new employee
+// WHEN I choose to cancel
+// THEN my employee data is displayed on the page sorted alphabetically by last name, and the console shows computed and aggregated data
